@@ -1,0 +1,175 @@
+.wheel {
+    border: 2px solid black;
+    /* Dibuja un borde negro alrededor de la rueda */
+    border-radius: 50%;
+    /* Convierte el borde en un círculo perfecto */
+    margin-left: 50px;
+    /* Deja espacio a la izquierda */
+    position: absolute;
+    /* Posiciona la rueda de manera absoluta en la página */
+    height: 55vw;
+    /* Altura: 55% del ancho de la ventana (diseño responsive) */
+    width: 55vw;
+    /* Ancho: 55% del ancho de la ventana */
+    max-width: 500px;
+    /* Limita el tamaño máximo de la rueda en ancho */
+    max-height: 500px;
+    /* Limita el tamaño máximo en altura */
+    animation-name: wheel;
+    /* Usa la animación "wheel" (definida más abajo) */
+    animation-duration: 10s;
+    /* Dura 10 segundos cada giro */
+    animation-iteration-count: infinite;
+    /* Se repite sin fin */
+    animation-timing-function: linear;
+    /* Velocidad constante */
+}
+
+.line {
+    background-color: black;
+    /* Color negro para los radios de la rueda */
+    width: 50%;
+    /* Ocupan la mitad del ancho del círculo */
+    height: 2px;
+    /* Son líneas delgadas */
+    position: absolute;
+    /* Se posicionan dentro de la rueda */
+    top: 50%;
+    /* Colocadas en el centro vertical */
+    left: 50%;
+    /* Colocadas en el centro horizontal */
+    transform-origin: 0% 0%;
+    /* El punto de giro es la esquina superior izquierda */
+}
+
+
+/* Cada línea extra se rota con un ángulo distinto para simular radios */
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+}
+
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+}
+
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+}
+
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+}
+
+.cabin {
+    background-color: red;
+    /* Color inicial de cada cabina */
+    width: 20%;
+    /* Ancho relativo al círculo */
+    height: 20%;
+    /* Alto relativo al círculo */
+    position: absolute;
+    /* Se colocan en posiciones fijas */
+    border: 2px solid;
+    /* Borde visible alrededor */
+    transform-origin: 50% 0%;
+    /* Punto de giro en la parte superior central */
+    animation: cabins 10s ease-in-out infinite;
+    /* Animación llamada "cabins", dura 10s, se repite infinito,
+       con movimiento suave al inicio y fin */
+}
+
+
+/* Posiciones específicas para cada cabina alrededor de la rueda */
+
+.cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+}
+
+
+/* Derecha, centro */
+
+.cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+}
+
+
+/* Abajo derecha */
+
+.cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+}
+
+
+/* Abajo izquierda */
+
+.cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+}
+
+
+/* Izquierda, centro */
+
+.cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+}
+
+
+/* Arriba izquierda */
+
+.cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+}
+
+
+/* Arriba derecha */
+
+
+/* Animación de la rueda: gira en círculos */
+
+@keyframes wheel {
+    0% {
+        transform: rotate(0deg);
+    }
+    /* Inicio: sin rotación */
+    100% {
+        transform: rotate(360deg);
+    }
+    /* Fin: una vuelta completa */
+}
+
+
+/* Animación de las cabinas */
+
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+    }
+    /* Comienzan derechas */
+    25% {
+        background-color: yellow;
+    }
+    /* Cambian de color a amarillo */
+    50% {
+        background-color: purple;
+    }
+    /* Luego a morado */
+    75% {
+        background-color: yellow;
+    }
+    /* Otra vez amarillo */
+    100% {
+        transform: rotate(-360deg);
+    }
+    /* Giran en sentido contrario para mantenerse rectas */
+}

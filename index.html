@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Esta línea indica que el documento está escrito en HTML5.
+     Es una declaración obligatoria al inicio del archivo. -->
+
+<html lang="en">
+<!-- Etiqueta raíz de todo el documento HTML.
+     El atributo lang="en" indica que el idioma del contenido es inglés. -->
+
+<head>
+    <!-- La sección <head> contiene información sobre la página,
+         que no se muestra directamente en el navegador (metadatos). -->
+
+    <meta charset="UTF-8">
+    <!-- Indica la codificación de caracteres (UTF-8),
+         lo que permite mostrar símbolos y acentos correctamente. -->
+
+    <title>Ferris Wheel</title>
+    <!-- Define el título de la pestaña en el navegador. -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Conecta el archivo HTML con una hoja de estilos externa (styles.css),
+         donde se definen los colores, posiciones, animaciones, etc. -->
+</head>
+
+<body>
+    <!-- Todo lo que está dentro de <body> se muestra en la página web. -->
+
+    <div class="wheel">
+        <!-- Este <div> representa la rueda de la "noria" (Ferris Wheel).
+             Aquí dentro estarán las partes de la rueda: las líneas y las cabinas. -->
+
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <!-- Cada <span> con la clase "line" representa un radio de la rueda.
+             Como hay 6, simulan las líneas que van desde el centro hasta el borde. -->
+
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <div class="cabin"></div>
+        <!-- Cada <div> con la clase "cabin" representa una cabina de la noria.
+             Como hay 6 cabinas, estarán distribuidas alrededor de la rueda. -->
+    </div>
+</body>
+
+</html>
+<!-- Cierre del documento HTML. -->
